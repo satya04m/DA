@@ -1,0 +1,12 @@
+def is_palindrome(s):
+    # Base case: if the string is 0 or 1 character, it's a palindrome
+    if len(s) <= 1:
+        return True
+    # Recursive case: check outer characters and recurse on the inner substring
+    if s[0] == s[-1]:
+        return is_palindrome(s[1:-1])
+    return False
+
+# Test the function
+string = "radar"
+print(f"Is '{string}' a palindrome? {is_palindrome(string)}")
