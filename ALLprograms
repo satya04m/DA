@@ -1,0 +1,80 @@
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import StandardScaler
+import pandas as pd
+
+# Example dataset
+data = pd.DataFrame({
+    'Math_Score': [80, 90, 70, 60, 85],
+    'Reading_Score': [85, 75, 65, 90, 88],
+    'Writing_Score': [78, 82, 72, 85, 89]
+})
+
+# Step 1: Standardize the data
+scaler = StandardScaler()
+data_scaled = scaler.fit_transform(data)
+
+# Step 2: Apply PCA
+pca = PCA(n_components=2)  # Reduce to 2 components
+principal_components = pca.fit_transform(data_scaled)
+
+# Step 3: View results
+print("Principal Components:")
+print(principal_components)
+....................................................................................................
+import matplotlib.pyplot as plt
+
+# Example data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 8, 10]
+
+# Plot scatterplot
+plt.scatter(x, y)
+plt.title("Scatterplot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+import numpy as np
+
+# Calculate correlation
+correlation = np.corrcoef(x, y)[0, 1]
+print(f"Correlation Coefficient: {correlation}")
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Prepare data
+x = np.array(x).reshape(-1, 1)
+y = np.array(y)
+
+# Train model
+model = LinearRegression()
+model.fit(x, y)
+
+# Predict
+y_pred = model.predict(x)
+print("Predictions:", y_pred)
+.............................................................................................
+def is_palindrome(s):
+    # Base case: if the string is 0 or 1 character, it's a palindrome
+    if len(s) <= 1:
+        return True
+    # Recursive case: check outer characters and recurse on the inner substring
+    if s[0] == s[-1]:
+        return is_palindrome(s[1:-1])
+    return False
+
+# Test the function
+string = "radar"
+print(f"Is '{string}' a palindrome? {is_palindrome(string)}")
+..............................................................................................
+def find_greatest(a, b, c):
+    if a > b and a > c:
+        return f"The greatest number is {a}"
+    elif b > a and b > c:
+        return f"The greatest number is {b}"
+    else:
+        return f"The greatest number is {c}"
+
+# Test the function
+a, b, c = 10, 25, 15
+print(find_greatest(a, b, c))
+..................................................................................................
