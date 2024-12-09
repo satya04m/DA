@@ -1,0 +1,11 @@
+def find_greatest(a, b, c):
+    if a > b and a > c:
+        return f"The greatest number is {a}"
+    elif b > a and b > c:
+        return f"The greatest number is {b}"
+    else:
+        return f"The greatest number is {c}"
+
+# Test the function
+a, b, c = 10, 25, 15
+print(find_greatest(a, b, c))
