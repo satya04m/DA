@@ -1,0 +1,36 @@
+import matplotlib.pyplot as plt
+
+# Example data
+x = [1, 2, 3, 4, 5]
+y = [2, 4, 5, 8, 10]
+
+# Plot scatterplot
+plt.scatter(x, y)
+plt.title("Scatterplot")
+plt.xlabel("X-axis")
+plt.ylabel("Y-axis")
+plt.show()
+
+import numpy as np
+
+# Calculate correlation
+correlation = np.corrcoef(x, y)[0, 1]
+print(f"Correlation Coefficient: {correlation}")
+
+
+from sklearn.linear_model import LinearRegression
+import numpy as np
+
+# Prepare data
+x = np.array(x).reshape(-1, 1)
+y = np.array(y)
+
+# Train model
+model = LinearRegression()
+model.fit(x, y)
+
+# Predict
+y_pred = model.predict(x)
+print("Predictions:", y_pred)
+
+
